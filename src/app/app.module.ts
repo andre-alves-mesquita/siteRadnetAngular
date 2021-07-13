@@ -3,10 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { PlanosComponent } from './planos/planos.component';
+import { ContatosComponent } from './contatos/contatos.component';
+import { SimuladorComponent } from './simulador/simulador.component';
+import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
+import { CentralDoAssinanteComponent } from './central-do-assinante/central-do-assinante.component';
+import { PoliticasDePrivacidadeComponent } from './politicas-de-privacidade/politicas-de-privacidade.component';
+import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    PlanosComponent,
+    ContatosComponent,
+    SimuladorComponent,
+    TrabalheConoscoComponent,
+    CentralDoAssinanteComponent,
+    PoliticasDePrivacidadeComponent,
+    PreCadastroComponent
   ],
   imports: [
     BrowserModule,
