@@ -1,3 +1,4 @@
+import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 import { PoliticasDePrivacidadeComponent } from './politicas-de-privacidade/politicas-de-privacidade.component';
 import { SimuladorComponent } from './simulador/simulador.component';
 import { CentralDoAssinanteComponent } from './central-do-assinante/central-do-assinante.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'trabalhe-conosco', component: TrabalheConoscoComponent },
   { path: 'central-do-assinante', component: CentralDoAssinanteComponent },
   { path: 'simulador', component: SimuladorComponent },
+  { path: 'pre-cadastro', component: PreCadastroComponent },
   {
     path: 'politicas-de-privacidade',
     component: PoliticasDePrivacidadeComponent,

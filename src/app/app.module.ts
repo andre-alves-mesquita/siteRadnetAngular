@@ -1,3 +1,4 @@
+import { SliderService } from './home/slider.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,8 @@ import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.co
 import { CentralDoAssinanteComponent } from './central-do-assinante/central-do-assinante.component';
 import { PoliticasDePrivacidadeComponent } from './politicas-de-privacidade/politicas-de-privacidade.component';
 import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
+import { PlanosService } from './planos/planos.service';
+import { ContatosService } from './contatos/contatos.service';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,10 @@ import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
     TrabalheConoscoComponent,
     CentralDoAssinanteComponent,
     PoliticasDePrivacidadeComponent,
-    PreCadastroComponent
+    PreCadastroComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [PlanosService, ContatosService, SliderService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
