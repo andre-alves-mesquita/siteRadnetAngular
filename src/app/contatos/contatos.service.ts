@@ -20,6 +20,11 @@ export class ContatosService {
       info: 'contato@viaradnet.com.br',
       icone: 'fa fa-envelope fa-4x',
     },
+    {
+      tipo: 'Horario de Atendimento',
+      info: 'Atendimento de Segunda a Sexta das 08:00 as 18:00 e Sábado das 08:00 as 17:00',
+      icone: 'fa fa-clock-o fa-4x',
+    },
   ];
   constructor() {}
 

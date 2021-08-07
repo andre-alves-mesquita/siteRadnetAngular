@@ -1,11 +1,18 @@
-<div class="text-center pt-5 pb-5 d-flex row">
-    <div>
-        <h2>CONTATO</h2>
-        <p>Envie-nos um e-mail, Whatsapp ou deixe seu número que ligamos para você</p>
-    </div>
-    <div class="col pt-5" *ngFor="let contato of Contatos">
-        <i class="{{contato.icone}}"></i>
-        <h4>{{contato.tipo}}</h4>
-        <p>{{contato.info}}</p>
+<div class="container-fluid contatos ">
+    <div class="container">
+        <div class="row text-center pt-5 pb-5 text-dark conteudo">
+
+            <div class="mt-2">
+                <h2>CONTATO</h2>
+                <p>Envie-nos um e-mail, Whatsapp ou deixe seu número que ligamos para você</p>
+            </div>
+
+            <div class="col-md-3 pt-5" *ngFor="let contato of Contatos">
+                <i class="{{contato.icone}}"></i>
+                <br>
+                <h4>{{contato.tipo}}</h4>
+                <p>{{contato.info}}</p>
+            </div>
+        </div>
     </div>
 </div>

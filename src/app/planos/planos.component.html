@@ -1,13 +1,48 @@
-<div class="container row mt-5 mb-5 text-center">
-    <h2>Planos Radnet Telecom</h2>
-    <div class="col bg-warning m-1 p-4" *ngFor="let plano of Planos">
-        <h5>{{plano.nome}}</h5>
-        <p>{{plano.velocidade}}</p>
-        <p>{{plano.upload}}</p>
-        <p>WI-FI GRÁTIS</p>
-        <a href="">Condições Especiais</a>
-        <p>{{plano.preco}}</p>
-        <button type="button" class="btn btn-primary" routerLink="/pre-cadastro">Assine Já</button>
-    </div>
+<div class="container mt-5 mb-5 ">
 
+
+    <div class="p-2 row text-center text-light">
+
+        <h2 class="text-dark">Planos Radnet Telecom</h2>
+        <div class="col p-5 m-1 mt-5 cartao d-flex flex-column justify-content-between" *ngFor="let plano of Planos; let i = index" style="border-radius: 20px;">
+
+            <h1>{{plano.velocidade}}</h1>
+            <h2>{{plano.nome}}</h2>
+            <h5>Fibra Óptica</h5>
+            <h5>{{plano.upload}}</h5>
+            <br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Condições Comerciais
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-dark">
+                            <h5 class="modal-title" id="exampleModalLabel">Condições Comerciais</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-dark">
+                            No ato da instalação é necessário que o titular esteja na residência! Caso não seja possível, ele(a) deverá solicitar que uma pessoa maior de 18 anos esteja no local para receber o técnico, acompanhando toda a instalação e assinar a Ordem de Serviço.
+                            Comparecer no escritório em até 7 dias para assinatura do contrato.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+            <h5>WI-FI GRÁTIS</h5>
+            <h1>{{plano.preco}}</h1>
+            <br>
+
+            <button type="button" routerLink="/pre-cadastro" class="btn btn-warning" data-bs-toggle="modal">
+              Assine Já
+            </button>
+        </div>
+    </div>
 </div>

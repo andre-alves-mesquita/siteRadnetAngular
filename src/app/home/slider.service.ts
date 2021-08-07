@@ -7,8 +7,8 @@ export class SliderService {
   slider = [
     {
       enderecoImg: '../../assets/img/hero-carousel/3.jpg',
-      titulo: 'First slide label',
-      texto: 'Some representative placeholder content for the first slide.',
+      titulo: 'teste para ver se funciona',
+      texto: 'teste para ver se funciona',
     },
     {
       enderecoImg: '../../assets/img/hero-carousel/1.jpg',
@@ -17,6 +17,16 @@ export class SliderService {
     },
     {
       enderecoImg: '../../assets/img/hero-carousel/2.jpg',
+      titulo: 'Third slide label',
+      texto: 'Some representative placeholder content for the first slide.',
+    },
+    {
+      enderecoImg: '../../assets/img/hero-carousel/4.jpg',
+      titulo: 'Third slide label',
+      texto: 'Some representative placeholder content for the first slide.',
+    },
+    {
+      enderecoImg: '../../assets/img/hero-carousel/5.jpg',
       titulo: 'Third slide label',
       texto: 'Some representative placeholder content for the first slide.',
     },

@@ -1,0 +1,7 @@
+.contatos {
+    background-image: url(../../assets/img/about-bg-orange.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

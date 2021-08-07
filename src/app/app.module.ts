@@ -1,7 +1,5 @@
-import { SliderService } from './home/slider.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +12,15 @@ import { PoliticasDePrivacidadeComponent } from './politicas-de-privacidade/poli
 import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 import { PlanosService } from './planos/planos.service';
 import { ContatosService } from './contatos/contatos.service';
+import { FormsModule } from '@angular/forms';
+import { AbrangenciaComponent } from './abrangencia/abrangencia.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SimuladorModule } from './simulador/simulador.module';
+import { SliderService } from './home/slider.service';
+import { SimuladorRoutingModule } from './simulador/simulador-routing.module';
+import { ManualUsuarioComponent } from './manual-usuario/manual-usuario.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +28,23 @@ import { ContatosService } from './contatos/contatos.service';
     HomeComponent,
     PlanosComponent,
     ContatosComponent,
-    SimuladorComponent,
     TrabalheConoscoComponent,
     CentralDoAssinanteComponent,
     PoliticasDePrivacidadeComponent,
     PreCadastroComponent,
+    AbrangenciaComponent,
+    SobreNosComponent,
+    ManualUsuarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SimuladorRoutingModule,
+    FormsModule,
+    SimuladorModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+  ],
   providers: [PlanosService, ContatosService, SliderService],
   bootstrap: [AppComponent],
 })
