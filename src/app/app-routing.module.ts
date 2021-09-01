@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { ManualUsuarioComponent } from './manual-usuario/manual-usuario.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'central-do-assinante', component: CentralDoAssinanteComponent },
   { path: 'abrangencia', component: AbrangenciaComponent },
   { path: 'sobre-nos', component: SobreNosComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'manual-usuario', component: ManualUsuarioComponent },
   { path: 'pre-cadastro', component: PreCadastroComponent },
   {
@@ -35,7 +37,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      anchorScrolling: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

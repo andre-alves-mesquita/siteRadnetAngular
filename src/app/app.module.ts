@@ -21,6 +21,8 @@ import { SimuladorModule } from './simulador/simulador.module';
 import { SliderService } from './home/slider.service';
 import { SimuladorRoutingModule } from './simulador/simulador-routing.module';
 import { ManualUsuarioComponent } from './manual-usuario/manual-usuario.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { ManualUsuarioComponent } from './manual-usuario/manual-usuario.componen
     AbrangenciaComponent,
     SobreNosComponent,
     ManualUsuarioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { ManualUsuarioComponent } from './manual-usuario/manual-usuario.componen
     SimuladorModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [PlanosService, ContatosService, SliderService],
   bootstrap: [AppComponent],

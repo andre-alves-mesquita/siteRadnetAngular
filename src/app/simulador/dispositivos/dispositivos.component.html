@@ -3,10 +3,12 @@
         <h4>Informe abaixo a quantidade total dos dispositivos que irão compartilhar a conexão neste endereço</h4>
     </div>
 
+    
     <div class="container d-flex justify-content-center flex-wrap">
+        
         <div class="d-flex flex-column  align-items-center p-5">
             <i class="fas fa-mobile-alt fa-3x pb-3"></i>
-            <label>Camera(s)  <input type="number" class="input-qtd" id="input-cam" min="0" max="10" value="0"><br></label>
+            <label>Celulares(s)  <input type="number" class="input-qtd" id="input-cam" min="0" max="10" value="0" [(ngModel)]="celular" name="celular"><br></label>
         </div>
         <div class="d-flex flex-column  align-items-center p-5">
             <i class="fas fa-laptop fa-3x pb-3"></i>
@@ -32,7 +34,10 @@
             <i class="fas fa-gamepad fa-3x pb-3"></i>
             <label>VideoGame(s) <input type="number" class="input-qtd" id="input-vig" min="0" max="10" value="0"><br></label>
         </div>
+        
     </div>
+
+
 
 
 </div>

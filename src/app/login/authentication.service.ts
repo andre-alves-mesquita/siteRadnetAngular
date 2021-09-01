@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class SliderService {
+export class AuthenticationService {
   constructor(private httpClient: HttpClient) {}
 
-  getSlider() {
-    return this.httpClient.get('http://localhost:8000/api/slider');
+  getData() {
+    return this.httpClient.get('http://localhost:8000/api/login');
   }
 }

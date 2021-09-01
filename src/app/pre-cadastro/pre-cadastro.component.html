@@ -1,113 +1,349 @@
 <div class="container text-center mb-2 mt-5">
+  <h2 class="mt-4">Pré - Cadastro</h2>
 
-    <h2 class="mt-4">Pré - Cadastro</h2>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#" routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="#" routerLink="/planos">Planos</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Pré - Cadastro</li>
+    </ol>
+  </nav>
 
-    <div class="col mb-3 mt-3 p-5" style="background-color: #ff8b3e;border-radius: 20px">
-        
-        <h4 class="mb-5 ">Formulário de Pré - Cadastro</h4>
-        
-        <form (ngSubmit)="transferir()">
+  <div
+    class="col mb-3 mt-3 p-5"
+    style="background-color: #ff8b3e; border-radius: 20px"
+  >
+    <h4 class="mb-5">Formulário de Pré - Cadastro</h4>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nome Completo</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
+    <form #formulario="ngForm" (ngSubmit)="insertPrecadastro(formulario)">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome Completo</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="nome"
+          [(ngModel)]="preCadastro.nome"
+          #nomeInv="ngModel"
+          required
+        />
+        <span
+          *ngIf="nomeInv.invalid && nomeInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">CPF</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">CPF</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="cpf"
+          [(ngModel)]="preCadastro.cpf"
+          required
+          #cpfInv="ngModel"
+        />
+        <span
+          *ngIf="cpfInv.invalid && cpfInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">RG</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">RG</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="rg"
+          [(ngModel)]="preCadastro.rg"
+          required
+          #rgInv="ngModel"
+        />
+        <span
+          *ngIf="rgInv.invalid && rgInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"
+          >Data de Nascimento</span
+        >
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Data de Nascimento"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="data_nascimento"
+          [(ngModel)]="preCadastro.data_nascimento"
+          required
+          #dtInv="ngModel"
+        />
+        <span
+          *ngIf="dtInv.invalid && dtInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome da Mãe</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="nome_mae"
+          [(ngModel)]="preCadastro.nome_mae"
+          required
+          #nomeMaeInv="ngModel"
+        />
+        <span
+          *ngIf="nomeMaeInv.invalid && nomeMaeInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Data de Nascimento</span>
-                <input type="text" class="form-control" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="dtNasc" name="dtNasc">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Email</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Email"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="email"
+          [(ngModel)]="preCadastro.email"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
+          required
+          #emailInv="ngModel"
+        />
+        <span
+          *ngIf="emailInv.invalid && emailInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Seu Telefone</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Telefone"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="fone"
+          [(ngModel)]="preCadastro.fone"
+          required
+          #foneInv="ngModel"
+        />
+        <span
+          *ngIf="foneInv.invalid && foneInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nome da Mãe</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"
+          >Outro telefone para Contato</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          ngModel
+          name="fone_secundario"
+          [(ngModel)]="preCadastro.fone_secundario"
+          required
+          #outroContatoInv="ngModel"
+        />
+        <span
+          *ngIf="outroContatoInv.invalid && outroContatoInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Endereço</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Endereço"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="endereco"
+          [(ngModel)]="preCadastro.endereco"
+          required
+          #enderecoInv="ngModel"
+        />
+        <span
+          *ngIf="enderecoInv.invalid && enderecoInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Email</span>
-                <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="email" name="email">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Seu Telefone</span>
-                <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="telefone" name="telefone">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"
+          >Ponto de fererência</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="ponto_referencia"
+          [(ngModel)]="preCadastro.ponto_referencia"
+          required
+          #pontoInv="ngModel"
+        />
+        <span
+          *ngIf="pontoInv.invalid && pontoInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Outro telefone para Contato</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"
+          >Data de vencimento</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Completo"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          name="data_vencimento"
+          [(ngModel)]="preCadastro.data_vencimento"
+          required
+          #dtVencimentoInv="ngModel"
+        />
+        <span
+          *ngIf="dtVencimentoInv.invalid && dtVencimentoInv.touched"
+          class="bg-danger align-middle p-2 text-light"
+          >Campo Inválido</span
+        >
+      </div>
 
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            href="#pills-home"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Sem Fidelidade</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            href="#pills-profile"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Com Fidelidade</a
+          >
+        </li>
+      </ul>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Endereço</span>
-                <input type="text" class="form-control" placeholder="Endereço" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="endereco" name="endereco">
-            </div>
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-home"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Plano Escolhido</label
+            >
+            <select
+              class="form-select"
+              id="inputGroupSelect01"
+              name="plano_escolhido"
+              [(ngModel)]="preCadastro.plano_escolhido"
+              required
+              #planoFidelidadeInv="ngModel"
+            >
+              <option value="1" selected>
+                START - 20MB - R$ 99,90 / MENSAL
+              </option>
+              <option value="2">FAMILY - 50MB - R$ 119,90 / MENSAL</option>
+              <option value="3">OFFICE - 100MB - R$ 169,90 / MENSAL</option>
+              <option value="4">GAME - 200MB - R$ 249,90 / MENSAL</option>
+            </select>
+            <span
+              *ngIf="planoFidelidadeInv.invalid && planoFidelidadeInv.touched"
+              class="bg-danger align-middle p-2 text-light"
+              >Campo Inválido</span
+            >
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+        >
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Plano Escolhido</label
+            >
+            <select
+              class="form-select"
+              id="inputGroupSelect01"
+              name="plano_escolhido"
+              [(ngModel)]="preCadastro.plano_escolhido"
+              required
+              #planoSemFidelidade="ngModel"
+            >
+              <option value="5" selected>
+                START - 20MB - R$ 79,90 / MENSAL
+              </option>
+              <option value="6">FAMILY - 50MB - R$ 99,90 / MENSAL</option>
+              <option value="7">OFFICE - 100MB - R$ 149,90 / MENSAL</option>
+              <option value="8">GAME - 200MB - R$ 199,90 / MENSAL</option>
+            </select>
+            <span
+              *ngIf="planoSemFidelidade.invalid && planoSemFidelidade.touched"
+              class="bg-danger align-middle p-2 text-light"
+              >Campo Inválido</span
+            >
+          </div>
+        </div>
+      </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Ponto de fererência</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Data de vencimento</span>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="nome" name="nome">
-            </div>
-
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sem Fidelidade</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Com Fidelidade</a>
-                </li>
-
-            </ul>
-
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Plano Escolhido</label>
-                        <select class="form-select" id="inputGroupSelect01" name="pl_esc" required>
-<option value="1" selected>START - 20MB - R$ 99,90 / MENSAL</option>
-<option value="2">FAMILY - 50MB - R$ 119,90 / MENSAL</option>
-<option value="3">OFFICE - 100MB - R$ 169,90 / MENSAL</option>
-<option value="4">GAME - 200MB - R$ 249,90 / MENSAL</option>
-</select>
-                    </div>
-
-                </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Plano Escolhido</label>
-                        <select class="form-select" id="inputGroupSelect01" name="pl_esc" required>
-                          <option value="5" selected>START - 20MB - R$ 79,90 / MENSAL</option>
-<option value="6">FAMILY - 50MB - R$ 99,90 / MENSAL</option>
-<option value="7">OFFICE - 100MB - R$ 149,90 / MENSAL</option>
-<option value="8">GAME - 200MB - R$ 199,90 / MENSAL</option>
-</select>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button type="button" class="btn btn-primary mb-3" type="submit">Cadastre-se</button>
-        </form>
-    </div>
+      <button type="button" class="btn btn-primary mb-3" type="submit">
+        Cadastre-se
+      </button>
+    </form>
+  </div>
 </div>

@@ -1,14 +1,17 @@
 .linkList :hover {
-    background-color: rgb(231, 231, 231);
-    border-radius: 20px;
-    font-size: 18px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
+  font-size: 18px;
 }
 
 .instagram :hover {
-    color: rgb(68, 0, 255);
-    
+  color: rgb(68, 0, 255);
 }
 
 .facebook :hover {
-    color: rgb(68, 0, 255);
+  color: rgb(68, 0, 255);
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid red;
 }

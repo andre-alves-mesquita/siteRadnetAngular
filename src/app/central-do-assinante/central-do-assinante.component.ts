@@ -8,6 +8,7 @@ import {
   query,
 } from '@angular/animations';
 
+
 @Component({
   selector: 'app-central-do-assinante',
   templateUrl: './central-do-assinante.component.html',
@@ -18,7 +19,7 @@ import {
       state(
         'active',
         style({
-          color:'white',
+          color: 'white',
           backgroundColor: '#ff8b3e',
           transform: 'scale(1.2)',
           boxShadow:
@@ -39,4 +40,6 @@ export class CentralDoAssinanteComponent implements OnInit {
   toggleState() {
     this.myState = this.myState === 'active' ? 'inactive' : 'active';
   }
+
+
 }

@@ -1,0 +1,71 @@
+<div class="container-fluid mt-5">
+  <div class="container  p-3">
+    <div class="d-flex row">
+
+        <div class="col d-flex justify-content-center align-items-center">
+            <img src="../../assets/logo radnet/logo 226x100.png" />
+        </div>
+        
+        <div class="col p-5 bg-light">
+
+            <h2 class="mb-3 text-center p-1">Área de Funcionário</h2>
+            <form #formulario="ngForm" (ngSubmit)="transferir(formulario)">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Login</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  [(ngModel)]="login" name="login"
+                />
+              </div>
+        
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Senha</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Password"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  [(ngModel)]="senha" name="senha"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-success me-1 col" routerLink="resultado">
+                Logar
+              </button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Esqueceu sua Senha?
+                </button>
+            </form>
+        
+        
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-dark">
+                            <h5 class="modal-title" id="exampleModalLabel">Recuperar Senha</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-dark">
+                         Entre em contato com o setor de desenvolvimento para recuperar sua senha
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+
+
+    </div>
+  </div>
+</div>
+
+

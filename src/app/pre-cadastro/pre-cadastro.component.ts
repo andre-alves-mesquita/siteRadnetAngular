@@ -1,4 +1,7 @@
+import { DataService } from './../data.service';
+import { preCadastro } from './../preCadastro';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pre-cadastro',
@@ -6,29 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pre-cadastro.component.css'],
 })
 export class PreCadastroComponent implements OnInit {
-  cliente: any[] = [];
+  preCadastros: any[] = [];
+  preCadastro = new preCadastro();
 
-  nome: string = '';
-  dtNasc: string = '';
-  telefone: string = '';
-  email: string = '';
-  endereco: string = '';
+  router: Router;
 
-  constructor() {}
+  constructor(private DataService: DataService, router: Router) {
+    this.router = router;
+  }
 
   ngOnInit(): void {}
 
-  transferir() {
-    this.cliente = [
-      {
-        nome: this.nome,
-        dtNasc: this.dtNasc,
-        telefone: this.telefone,
-        email: this.email,
-        endereco: this.endereco,
-      },
-    ];
-    alert(this.cliente[0].nome);
-    alert(this.cliente[0].dtNasc);
+  insertPrecadastro(form: any) {
+    this.DataService.insertPrecadastro(this.preCadastro).subscribe((res) => {
+      console.log(res);
+      alert('Cadastro de email feito com sucesso');
+      this.router.navigate(['']);
+    });
   }
 }

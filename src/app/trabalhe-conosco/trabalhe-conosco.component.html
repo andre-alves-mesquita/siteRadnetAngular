@@ -9,6 +9,8 @@
       <br />
       <h4 class="text-light">CADASTRE JÁ SEU CURRÍCULO</h4>
       <br />
+
+      <form #formulario="ngForm" (ngSubmit)="transferir(formulario)">
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nome Completo</span>
         <input
@@ -17,19 +19,23 @@
           placeholder="Nome Completo"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="nome" name="nome" #nomeInv="ngModel"  required
         />
+        <span *ngIf="nomeInv.invalid && nomeInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"
           >Data de Nascimento</span
         >
         <input
-          type="text"
+          type="date"
           class="form-control"
           placeholder="Data de Nascimento"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="dtNascimento" name="dtNascimento" #dtNascimentoInv="ngModel"  required
         />
+        <span *ngIf="dtNascimentoInv.invalid && dtNascimentoInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Email</span>
@@ -39,7 +45,9 @@
           placeholder="Email"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="email" name="email" #emailInv="ngModel"  required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
         />
+        <span *ngIf="emailInv.invalid && emailInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Telefone</span>
@@ -49,7 +57,9 @@
           placeholder="Telefone"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="fone" name="fone" #foneInv="ngModel"  required
         />
+        <span *ngIf="foneInv.invalid && foneInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Endereço</span>
@@ -59,7 +69,9 @@
           placeholder="Endereço"
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="endereco" name="endereco" #enderecoInv="ngModel"  required
         />
+        <span *ngIf="enderecoInv.invalid && enderecoInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
 
       <span class="text-light"
@@ -70,13 +82,14 @@
         <label class="input-group-text" for="inputGroupSelect01"
           >Área de Interesse</label
         >
-        <select class="form-select" id="inputGroupSelect01">
+        <select class="form-select" id="inputGroupSelect01" [(ngModel)]="areaDeInteresse" name="areaDeInteresse" #areaDeInteresseInv="ngModel"  required>
           <option selected>Geral</option>
           <option value="1">Infraestrutura</option>
           <option value="2">Telemarketing</option>
           <option value="3">Gestão</option>
           <option value="3">Vendas</option>
         </select>
+        <span *ngIf="areaDeInteresseInv.invalid && areaDeInteresseInv.touched" class="bg-danger align-middle p-2 text-light">Campo Inválido</span>
       </div>
 
       <span class="text-light">Formatos Suportados: docx, pdf</span>
@@ -89,14 +102,16 @@
       </div>
 
       <button
-        type="button"
+        type="submit"
         class="btn mb-3"
         style="background-color: rgb(44, 44, 255); color: white"
         id="trabalhe-conosco"
       >
         Cadastre-se
       </button>
+    </form>
     </div>
+
     <div class="col m-3">
       <img src="../../assets/logo radnet/logo 486x100.png" class="p-4" />
       <p>
