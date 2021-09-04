@@ -31,6 +31,8 @@ export class AppComponent {
     this.DataService.insertData(this.email).subscribe((res) => {
       console.log(res);
       alert('Cadastro de email feito com sucesso');
+      this.email.email = '';
+      window.location.reload();
     });
   }
 }

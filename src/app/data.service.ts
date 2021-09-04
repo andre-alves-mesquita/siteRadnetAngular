@@ -8,6 +8,7 @@ import { tap, delay, take } from 'rxjs/operators';
 export class DataService {
   constructor(private httpClient: HttpClient) {}
 
+  /*
   insertData(data: any) {
     return this.httpClient.post('http://localhost:8000/api/email', data);
   }
@@ -15,6 +16,20 @@ export class DataService {
   insertPrecadastro(data: any) {
     return this.httpClient
       .post('http://localhost:8000/api/precadastro', data)
+      .pipe(take(1));
+  }
+  */
+
+  insertData(data: any) {
+    return this.httpClient.post(
+      'http://teste-app.atwebpages.com/api/email',
+      data
+    );
+  }
+
+  insertPrecadastro(data: any) {
+    return this.httpClient
+      .post('http://teste-app.atwebpages.com/api/precadastro', data)
       .pipe(take(1));
   }
 }

@@ -8,6 +8,13 @@ export class SliderService {
   constructor(private httpClient: HttpClient) {}
 
   getSlider() {
+    return this.httpClient.get('http://teste-app.atwebpages.com/api/slider');
+  }
+
+  /*
+   getSlider() {
     return this.httpClient.get('http://localhost:8000/api/slider');
   }
+  
+  */
 }
